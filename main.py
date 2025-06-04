@@ -291,10 +291,6 @@ def main(page:Page):
             result_list.update()
 
         
-            
-			  
-
-        
 
         def close_anchor(e):
             #update_unites_dropdown()
