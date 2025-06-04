@@ -66,15 +66,15 @@ def main(page:Page):
             page.update()
         #definition des thèmes de la page
         page.theme = Theme(
-            color_scheme_seed=colors.BLUE_900,
+            color_scheme_seed=Colors.BLUE_900,
             color_scheme=ColorScheme(
-                primary=colors.BLUE
+                primary=Colors.BLUE
             ),
         )
         page.dark_theme = Theme(
-            color_scheme_seed=colors.BLUE_900,
+            color_scheme_seed=Colors.BLUE_900,
             color_scheme=ColorScheme(
-                primary=colors.BLUE_900
+                primary=Colors.BLUE_900
             )
         )
         page.theme.page_transitions = PageTransitionsTheme(
@@ -101,13 +101,13 @@ def main(page:Page):
                 ]
             ),
             leading_width=40,
-            title=ft.Text("Convertisseur d'unités", weight='bold', color=ft.colors.BLUE_50),
+            title=ft.Text("Convertisseur d'unités", weight='bold', color=ft.Colors.BLUE_50),
             center_title=False,
-            bgcolor=ft.colors.BLUE_900,
+            bgcolor=ft.Colors.BLUE_900,
             actions=[
                 ft.IconButton(
-                    ft.icons.BRIGHTNESS_6_OUTLINED,
-                    selected_icon=ft.icons.BRIGHTNESS_6,
+                    ft.Icons.BRIGHTNESS_6_OUTLINED,
+                    selected_icon=ft.Icons.BRIGHTNESS_6,
                     selected=page.theme_mode == ft.ThemeMode.DARK,
                     on_click=lambda e: ((page.__setattr__("theme_mode", ft.ThemeMode.LIGHT), e.control.__setattr__("selected", False)) if page.theme_mode == ft.ThemeMode.DARK
                     else (page.__setattr__("theme_mode", ft.ThemeMode.DARK), e.control.__setattr__("selected", True)), page.update())),
@@ -244,17 +244,17 @@ def main(page:Page):
 
         
         #le bouton flottant sur le bottom app bar
-        page.floating_action_button = ft.FloatingActionButton(icon=ft.icons.REFRESH , on_click = actualisation  )
+        page.floating_action_button = ft.FloatingActionButton(icon=ft.Icons.REFRESH , on_click = actualisation  )
         page.floating_action_button_location = ft.FloatingActionButtonLocation.CENTER_DOCKED
         #definition du bttom app bar
         page.bottom_appbar = ft.BottomAppBar(
-        bgcolor=ft.colors.BLUE_900,
+        bgcolor=ft.Colors.BLUE_900,
         shape=ft.NotchShape.CIRCULAR,
         content=ft.Row(
             controls=[
-                ft.IconButton(icon=ft.icons.HOME, icon_color=ft.colors.WHITE),
+                ft.IconButton(icon=ft.Icons.HOME, icon_color=ft.Colors.WHITE),
                 ft.Container(expand=True),
-                ft.IconButton(icon=ft.icons.SETTINGS, icon_color=ft.colors.WHITE),
+                ft.IconButton(icon=ft.Icons.SETTINGS, icon_color=ft.Colors.WHITE),
                 
             ]
         ),
@@ -342,7 +342,7 @@ def main(page:Page):
             view_elevation=4,
             width=page.width - 150,
             full_screen=True,
-            divider_color=ft.colors.AMBER,
+            divider_color=ft.Colors.AMBER,
             bar_hint_text="Recherche de grandeur...",
             view_hint_text="Choisir une grandeur...",
             on_change=handle_change,
@@ -354,9 +354,9 @@ def main(page:Page):
         )
 
         chercher = ft.IconButton(
-            icon=icons.LIST,
+            icon=Icons.LIST,
             autofocus=True,
-            bgcolor=colors.BLACK12,
+            bgcolor=Colors.BLACK12,
             on_click=lambda _: anchor.open_view()
         )
         search = Row(
@@ -394,7 +394,7 @@ def main(page:Page):
             options=[ft.dropdown.Option(option) for option in unites.get("Longueur" ,[])]
         )
         # definition du bouton qui permet de convertir
-        btn_c = IconButton(icon=icons.ARROW_FORWARD, icon_size=50, on_click=convertir)
+        btn_c = IconButton(icon=Icons.ARROW_FORWARD, icon_size=50, on_click=convertir)
         conv = ft.Container(
             height=70,
             padding=5,
@@ -413,7 +413,7 @@ def main(page:Page):
             shadow = BoxShadow(
                 spread_radius= 0.7 ,
                 blur_radius= 15 ,
-                color= ft.colors.BLUE_100,
+                color= ft.Colors.BLUE_100,
                 blur_style=  ShadowBlurStyle.OUTER
             )
         )
@@ -424,7 +424,7 @@ def main(page:Page):
             shadow = BoxShadow(
                 spread_radius= 0.7 ,
                 blur_radius= 15 ,
-                color= ft.colors.BLUE_100,
+                color= ft.Colors.BLUE_100,
                 blur_style=  ShadowBlurStyle.OUTER
             ),
             
@@ -496,15 +496,15 @@ def main(page:Page):
             page.update()
         #definition des thèmes de la page
         page.theme = Theme(
-            color_scheme_seed=colors.RED_900,
+            color_scheme_seed=Colors.RED_900,
             color_scheme=ColorScheme(
-                primary=colors.RED
+                primary=Colors.RED
             ),
         )
         page.dark_theme = Theme(
-            color_scheme_seed=colors.RED_900,
+            color_scheme_seed=Colors.RED_900,
             color_scheme=ColorScheme(
-                primary=colors.RED_900
+                primary=Colors.RED_900
             )
         )
         page.theme.page_transitions = PageTransitionsTheme(
@@ -519,7 +519,7 @@ def main(page:Page):
         # le app bar de l'application
         page.appbar = ft.AppBar(
             leading=ft.PopupMenuButton(
-                icon_color = colors.WHITE,
+                icon_color = Colors.WHITE,
                 items=[
                     ft.PopupMenuItem(text="Système Francophone", on_click = fr_event),
                     ft.PopupMenuItem(text="Signaler un bug", ),
@@ -531,14 +531,14 @@ def main(page:Page):
                 ]
             ),
             leading_width=40,
-            title=ft.Text("Convertisseur d'unités", weight='bold', color=ft.colors.BLUE_50),
+            title=ft.Text("Convertisseur d'unités", weight='bold', color=ft.Colors.BLUE_50),
             center_title=False,
-            bgcolor=ft.colors.RED_900,
+            bgcolor=ft.Colors.RED_900,
             actions=[
                 ft.IconButton(
-                    ft.icons.BRIGHTNESS_6_OUTLINED,
-                    icon_color = colors.WHITE,
-                    selected_icon=ft.icons.BRIGHTNESS_6,
+                    ft.Icons.BRIGHTNESS_6_OUTLINED,
+                    icon_color = Colors.WHITE,
+                    selected_icon=ft.Icons.BRIGHTNESS_6,
                     selected=page.theme_mode == ft.ThemeMode.DARK,
                     on_click=lambda e: ((page.__setattr__("theme_mode", ft.ThemeMode.LIGHT), e.control.__setattr__("selected", False)) if page.theme_mode == ft.ThemeMode.DARK
                     else (page.__setattr__("theme_mode", ft.ThemeMode.DARK), e.control.__setattr__("selected", True)), page.update())),
@@ -671,17 +671,17 @@ def main(page:Page):
 
         
         #le bouton flottant sur le bottom app bar
-        page.floating_action_button = ft.FloatingActionButton(icon=ft.icons.REFRESH , on_click = actualisation  )
+        page.floating_action_button = ft.FloatingActionButton(icon=ft.Icons.REFRESH , on_click = actualisation  )
         page.floating_action_button_location = ft.FloatingActionButtonLocation.CENTER_DOCKED
         #definition du bttom app bar
         page.bottom_appbar = ft.BottomAppBar(
-        bgcolor=ft.colors.RED_900,
+        bgcolor=ft.Colors.RED_900,
         shape=ft.NotchShape.CIRCULAR,
         content=ft.Row(
             controls=[
-                ft.IconButton(icon=ft.icons.HOME, icon_color=ft.colors.WHITE),
+                ft.IconButton(icon=ft.Icons.HOME, icon_color=ft.Colors.WHITE),
                 ft.Container(expand=True),
-                ft.IconButton(icon=ft.icons.SETTINGS, icon_color=ft.colors.WHITE),
+                ft.IconButton(icon=ft.Icons.SETTINGS, icon_color=ft.Colors.WHITE),
                 
             ]
         ),
@@ -771,7 +771,7 @@ def main(page:Page):
             view_elevation=4,
             width=page.width - 150,
             full_screen=True,
-            divider_color=ft.colors.AMBER,
+            divider_color=ft.Colors.AMBER,
             bar_hint_text="Recherche de grandeur...",
             view_hint_text="Choisir une grandeur...",
             on_change=handle_change,
@@ -783,10 +783,10 @@ def main(page:Page):
         )
 
         chercher = ft.IconButton(
-            icon=icons.LIST,
-            icon_color = colors.RED_600,
+            icon=Icons.LIST,
+            icon_color = Colors.RED_600,
             autofocus=True,
-            bgcolor=colors.BLACK12,
+            bgcolor=Colors.BLACK12,
             on_click=lambda _: anchor.open_view()
         )
         search = Row(
@@ -824,7 +824,7 @@ def main(page:Page):
             options=[ft.dropdown.Option(option) for option in unites.get("Longueur" ,[])]
         )
         # definition du bouton qui permet de convertir
-        btn_c = IconButton(icon=icons.ARROW_FORWARD,icon_color = 'red', icon_size=50, on_click=convertir)
+        btn_c = IconButton(icon=Icons.ARROW_FORWARD,icon_color = 'red', icon_size=50, on_click=convertir)
         conv = ft.Container(
             height=70,
             padding=5,
@@ -843,7 +843,7 @@ def main(page:Page):
             shadow = BoxShadow(
                 spread_radius= 0.7 ,
                 blur_radius= 15 ,
-                color= ft.colors.BLUE_100,
+                color= ft.Colors.BLUE_100,
                 blur_style=  ShadowBlurStyle.OUTER
             )
         )
@@ -854,7 +854,7 @@ def main(page:Page):
             shadow = BoxShadow(
                 spread_radius= 0.7 ,
                 blur_radius= 15 ,
-                color= ft.colors.BLUE_100,
+                color= ft.Colors.BLUE_100,
                 blur_style=  ShadowBlurStyle.OUTER
             ),
             
@@ -873,17 +873,17 @@ def main(page:Page):
         page.add(main_en)
         page.update()
     
-    fr = ElevatedButton("Système francophone",icon = icons.LOGIN,width = 350,height = 40,style = ButtonStyle(shape=RoundedRectangleBorder(radius=10)),bgcolor = colors.BLUE_900,color = colors.WHITE, on_click = fr_event)
-    en = ElevatedButton("Système Anglophone",icon = icons.LOGIN,width = 350,height = 40,style = ButtonStyle(shape=RoundedRectangleBorder(radius=10)),bgcolor = colors.RED_900,color = colors.WHITE, on_click = en_event)
+    fr = ElevatedButton("Système francophone",icon = Icons.LOGIN,width = 350,height = 40,style = ButtonStyle(shape=RoundedRectangleBorder(radius=10)),bgcolor = Colors.BLUE_900,color = Colors.WHITE, on_click = fr_event)
+    en = ElevatedButton("Système Anglophone",icon = Icons.LOGIN,width = 350,height = 40,style = ButtonStyle(shape=RoundedRectangleBorder(radius=10)),bgcolor = Colors.RED_900,color = Colors.WHITE, on_click = en_event)
     c = Container(
         expand = True,
         padding = 15,
         width = page.width,
-        bgcolor =ft.colors.WHITE,
+        bgcolor =ft.Colors.WHITE,
         gradient= LinearGradient(
             begin = alignment.top_center,
             end = alignment.bottom_center,
-            colors=[ft.colors.BLUE_200,ft.colors.RED_100 ,ft.colors.PINK_100,] 
+            colors=[ft.Colors.BLUE_200,ft.Colors.RED_100 ,ft.Colors.PINK_100,] 
             ),
         content = Column(spacing = 20,controls =[fr,en],alignment= MainAxisAlignment.CENTER ,horizontal_alignment= CrossAxisAlignment.CENTER )
     )
