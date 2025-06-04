@@ -276,6 +276,8 @@ def main(page:Page):
             next_united.update()
             page.update()
             
+
+            
             
         def search_grandeur(query):
             result_list.controls.clear()
